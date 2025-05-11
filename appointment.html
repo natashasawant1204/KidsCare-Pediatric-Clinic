@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Kids Medical Center</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+        }
+
+        .nav-links li a {
+            font-size: 1.1rem;
+        }
+
+        .appointment-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .appointment-form label {
+            font-size: 1.1rem;
+        }
+
+        .appointment-form input,
+        .appointment-form select,
+        .appointment-form textarea {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            font-family: 'Comic Neue', cursive;
+        }
+
+        .footer h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer p, .footer ul li a {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1 style="font-family: 'Comic Neue', cursive; font-size: 2.5rem; color: #ff4500;">KidsCare Pediatric Clinic</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="vaccination.html">Vaccination</a></li>
+            <li><a href="doctors.html">Our Doctors</a></li>
+            <li><a href="appointment.html">Appointment</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+       
+        <div class="nav-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="appointment-container">
+        <a href="index.html" class="home-button">🏠 Home</a>
+        <div class="appointment-card">
+            <div class="appointment-header">
+                <h2>🧸 Book Appointment 🩺</h2>
+        <p class="emoji">👶 🏥 🎨</p>
+            </div>
+            <form id="appointmentForm" class="appointment-form">
+                <div class="form-group">
+                    <label for="childName">👶 Child's Name: <span class="required">*</span></label>
+                    <input type="text" id="childName" name="childName" required 
+                           placeholder="Enter child's name" minlength="2">
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">🎂 Age: <span class="required">*</span></label>
+                    <input type="number" id="age" name="age" required 
+                           min="0" max="18" placeholder="Enter age">
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">👥 Gender: <span class="required">*</span></label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="doctor-select">👨‍⚕️ Select a Doctor: <span class="required">*</span></label>
+                    <select id="doctor-select" name="doctor" required>
+                        <option value="" disabled selected>--Select a Doctor--</option>
+                        <option value="dr-anjani-parab">Dr. Anjani Parab - Pediatrician</option>
+                        <option value="dr-neha-verma">Dr. Neha Verma - Child Neurologist</option>
+                        <option value="dr-rajesh-kumar">Dr. Rajesh Kumar - Child Surgeon</option>
+                        <option value="dr-priya-singh">Dr. Priya Singh - Child Neurologist</option>
+                        <option value="dr-sahil-sharma">Dr. Sahil Sharma - Child Allergist</option>
+                        <option value="dr-gauransh-pardhi">Dr. Gauransh Pardhi - Child Counsellor</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="parentContact">📞 Parent's Contact: <span class="required">*</span></label>
+                    <input type="tel" id="parentContact" name="parentContact" required 
+                           placeholder="Enter contact number" pattern="[0-9]{10}">
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentDate">📅 Appointment Date: <span class="required">*</span></label>
+                    <input type="date" id="appointmentDate" name="appointmentDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentTime">⏰ Appointment Time: <span class="required">*</span></label>
+                    <select id="appointmentTime" name="appointmentTime" required>
+                        <option value="" disabled selected>Select time</option>
+                        <option value="09:00 AM">09:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="01:00 PM">01:00 PM</option>
+                        <option value="02:00 PM">02:00 PM</option>
+                        <option value="03:00 PM">03:00 PM</option>
+                        <option value="04:00 PM">04:00 PM</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">✏️ Reason for Visit: <span class="required">*</span></label>
+                    <textarea id="reason" name="reason" rows="4" required 
+                              placeholder="Please describe the reason for visit" minlength="10"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="documentUpload">📎 Upload Documents (Optional):</label>
+                    <div class="upload-area" style="border: 2px dashed #ccc; padding: 20px; text-align: center; margin-top: 10px; cursor: pointer;">
+                        <input type="file" id="documentUpload" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" style="display: none;">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 2em; color: #666;"></i>
+                        <p>Drag & Drop Files Here or Click to Select</p>
+                        <p class="text-muted small">Supported formats: PDF, DOC, DOCX, JPG, PNG</p>
+                    </div>
+                    <div id="fileList" class="mt-2"></div>
+                </div>
+
+                <button type="submit" class="submit-button">🎈 Book Appointment 🎈</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">✅ Appointment Booked Successfully!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="confirmationMessage"></p>
+                    <div class="appointment-details">
+                        <p><strong>Child's Name:</strong> <span id="confirmChildName"></span></p>
+                        <p><strong>Doctor:</strong> <span id="confirmDoctor"></span></p>
+                        <p><strong>Date:</strong> <span id="confirmDate"></span></p>
+                        <p><strong>Time:</strong> <span id="confirmTime"></span></p>
+                        <p><strong>Contact:</strong> <span id="confirmContact"></span></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap and Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="../js/appointments.js" type="module"></script>
+</body>
+</html> 
